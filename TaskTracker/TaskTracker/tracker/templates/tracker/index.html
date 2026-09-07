@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskTracker App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #2c3e50; }
+        ul { list-style-type: square; }
+    </style>
+</head>
+<body>
+    <h1>TaskTracker Dashboard</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} - {% if task.is_completed %}Done{% else %}Pending{% endif %}</li>
+        {% empty %}
+            <li>No tasks found in the database. Add some via the admin panel!</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
